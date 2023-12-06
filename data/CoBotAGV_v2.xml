@@ -1,0 +1,2783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AGV_COMM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\AGV_OPC\XSDFile.xsd">
+ <TCP_FRAME>
+  <ID>6000</ID>
+  <Groups>Frames containing general statuses of AGV</Groups>
+  <Groups>Frames transmitted by PLC, with data prepared by PLC</Groups>
+  <Groups>Frames not transponded by PLC</Groups>
+  <NAME>Frame with device groups statuses (from PLC)</NAME>
+  <Comment>Devices' permissions, enables, control statuses</Comment>
+  <AGV_Id>999</AGV_Id>
+  <LENGTH>140</LENGTH>
+  <ver>1</ver>
+  <SIGNAL_GROUP>
+   <NAME>[TS] TIME STAMP</NAME>
+   <OFFSET>0</OFFSET>
+   <SIGNAL>
+    <Name>Time stamp</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Date and Time</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[GS] GENERAL SIGNALS</NAME>
+   <OFFSET>12</OFFSET>
+   <SIGNAL>
+    <Name>Manual Mode active</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Automatic Mode active</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Docking Mode active</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Fault Cancel</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>PLC fault active</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>PLC warning Active</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>PLC diagnostic message active</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[SS] SAFETY SIGNALS</NAME>
+   <OFFSET>14</OFFSET>
+   <SIGNAL>
+    <Name>Safety circuit closed</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Scanners muted</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Front E-Stops not pressed</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Rear E-Stops not pressed</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Front bumper not triggered</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Rear bumper not triggered</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Front scanner safety zone not violated</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>6</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Rear scanner safety zone not violated</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>7</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Front scanner warning zone not violated</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Rear scanner warning zone not violated</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Front 3D sensor activated</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Rear 3D sensor activated</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Front ultrasonic sensors activated</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Rear ultrasonic sensors activated</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Scanners active zones</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>AGV velocity active zone</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[LED] LED STATUS</NAME>
+   <OFFSET>20</OFFSET>
+   <SIGNAL>
+    <Name>LED Active</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>LED RGB - External control active</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>LED RGB Strip 1 (left) - Red</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>LED RGB Strip 2 (right) – Red</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>LED RGB Strip 1 (left) – Green</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>LED RGB Strip 2 (right) – Green</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>LED RGB Strip 1 (left) – Blue</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>6</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>LED RGB Strip 2 (right) – Blue</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>7</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>LED status - active mode</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Int16</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[ES] EXCLUSIONS STATUSES</NAME>
+   <OFFSET>24</OFFSET>
+   <SIGNAL>
+    <Name>Scanners muted</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>LED excluded</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Front bluespot excluded</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Rear bluespot excluded</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Front 3D sensor excluded</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Rear 3D sensor excluded</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Front ultrasonic sensor excluded</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>6</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Rear ultrasonic sensor excluded</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>7</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Trolley control excluded</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Resource control excluded</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Weight control excluded</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[OS] OTHER STATUSES</NAME>
+   <OFFSET>26</OFFSET>
+   <SIGNAL>
+    <Name>Front trolley sensor active</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Rear trolley sensor active</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Resource sensor active</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[WS] WEIGHT STATUSES</NAME>
+   <OFFSET>30</OFFSET>
+   <SIGNAL>
+    <Name>Front left strain gauge weight</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Front right strain gauge weight</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Rear left strain gauge weight</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Rear right strain gauge weight</Name>
+    <BYTE_OFFSET>6</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[G1LDS] GROUP 1 - LEFT DRIVE SIGNALS</NAME>
+   <OFFSET>38</OFFSET>
+   <SIGNAL>
+    <Name>Left drive activate - safety interlock</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Left drive activate - automatic permission</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Left drive activate - manual permission</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Left drive activate - command on</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Left drive activate - executed</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Left drive activate - in progress</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Left drive activate - enable active</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>7</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Left drive stop - safety interlock</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Left drive stop - automatic permission</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Left drive stop - manual permission</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Left drive stop - command on</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Left drive stop - executed</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Left drive stop - in progress</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>ActualSpeed_L</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Int16</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[G2RDS] GROUP 2 - RIGHT DRIVE SIGNALS</NAME>
+   <OFFSET>40</OFFSET>
+   <SIGNAL>
+    <Name>Right drive activate - safety interlock</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Right drive activate - automatic permission</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Right drive activate - manual permission</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Right drive activate - command on</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Right drive activate - executed</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Right drive activate - in progress</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Right drive activate - enable active</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>7</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Right drive stop - safety interlock</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Right drive stop - automatic permission</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Right drive stop - manual permission</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Right drive stop - command on</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Right drive stop - executed</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Right drive stop - in progress</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>ActualSpeed_R</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Int16</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[G1BS] GROUP 1 - BRAKES SIGNALS</NAME>
+   <OFFSET>42</OFFSET>
+   <SIGNAL>
+    <Name>Brake Lock - safety interlock</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Brake Lock - automatic permission</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Brake Lock - manual permission</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Brake Lock - command on</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Brake Lock - executed</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Brake Lock - in progress</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Brake Release - safety interlock</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Brake Release - automatic permission</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Brake Release - manual permission</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Brake Release - command on</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Brake Release - executed</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Brake Release - in progress</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[G2PAS] GROUP 2 - PIN ACTUATOR SIGNALS</NAME>
+   <OFFSET>44</OFFSET>
+   <SIGNAL>
+    <Name>Pin Down - safety interlock</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Pin Down - automatic permission</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Pin Down - manual permission</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Pin Down - command on</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Pin Down - executed</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Pin Down - in progress</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Pin Up - safety interlock</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Pin Up - automatic permission</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Pin Up - manual permission</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Pin Up - command on</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Pin Up - executed</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Pin Up - in progress</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[G3LPS] GROUP 3 - LIGTING PLATE SIGNALS</NAME>
+   <OFFSET>46</OFFSET>
+   <SIGNAL>
+    <Name>Lifting plate Down - safety interlock</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Lifting plate Down - automatic permission</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Lifting plate Down - manual permission</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Lifting plate Down - command on</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Lifting plate Down - executed</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Lifting plate Down - in progress</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Lifting plate Up - safety interlock</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Lifting plate Up - automatic permission</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Lifting plate Up - manual permission</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Lifting plate Up - command on</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Lifting plate Up - executed</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Lifting plate Up - in progress</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[AI] - ALARM INFORMATION</NAME>
+   <OFFSET>48</OFFSET>
+   <SIGNAL>
+    <Name>Alarm Information - General Control - Profinet Device Faulty</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - General Control - Profinet Device Lost Connection</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - General Control - Navigation System Status Unknown</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Trolley Control - Trolley Absent While Presence Memory is Active</Name>
+    <BYTE_OFFSET>3</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Trolley Control - Trolley Present While Presence Memory is Inactive</Name>
+    <BYTE_OFFSET>3</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Trolley Control - Resource Present While Presence Memory is Active</Name>
+    <BYTE_OFFSET>3</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Trolley Control - Resource Present While Presence Memory is Inactive</Name>
+    <BYTE_OFFSET>3</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Trolley Control - Transition Timeout of the Resource on Input</Name>
+    <BYTE_OFFSET>3</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Trolley Control - Transition Timeout of the Resource on Output</Name>
+    <BYTE_OFFSET>3</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Trolley Control - Trolley Not Detected During the Docking</Name>
+    <BYTE_OFFSET>3</BYTE_OFFSET>
+    <BIT_OFFSET>6</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Payload Control - Uneven Payload Distribution</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Payload Control - Overload</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Payload Control - Payload Lost</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>6</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Circuit Opened</Name>
+    <BYTE_OFFSET>5</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Speed Limit Exceeded</Name>
+    <BYTE_OFFSET>5</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Differential Velocity on Wheels Too High</Name>
+    <BYTE_OFFSET>5</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Front Scanner Unavailable</Name>
+    <BYTE_OFFSET>5</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Front No Zone Selected</Name>
+    <BYTE_OFFSET>5</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Front Scanner Protective Zone Active</Name>
+    <BYTE_OFFSET>5</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Front Scanner Glass Contamination Critically High</Name>
+    <BYTE_OFFSET>5</BYTE_OFFSET>
+    <BIT_OFFSET>6</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Front Scanner Device Error</Name>
+    <BYTE_OFFSET>5</BYTE_OFFSET>
+    <BIT_OFFSET>7</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Front Scanner Application Error</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Rear Scanner Unavailable</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Rear No Zone Selected</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Rear Scanner Protective Zone Active</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Rear Scanner Glass Contamination Critically High</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Rear Scanner Device Error</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Rear Scanner Application Error</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>6</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Front Emergency Stops Active</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>7</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Rear Emergency Stops Active</Name>
+    <BYTE_OFFSET>7</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Front Emergency Bumper Active</Name>
+    <BYTE_OFFSET>7</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Rear Emergency Bumper Active</Name>
+    <BYTE_OFFSET>7</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Front 3D Sensor Active</Name>
+    <BYTE_OFFSET>7</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Rear 3D Sensor Active</Name>
+    <BYTE_OFFSET>7</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Front Ultrasonic Sensors Active</Name>
+    <BYTE_OFFSET>7</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Rear Ultrasonic Sensors Active</Name>
+    <BYTE_OFFSET>7</BYTE_OFFSET>
+    <BIT_OFFSET>6</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Safety - Side Emergency Stops Active</Name>
+    <BYTE_OFFSET>7</BYTE_OFFSET>
+    <BIT_OFFSET>7</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Function Group - Front Actuator Timeout of Lifting Up</Name>
+    <BYTE_OFFSET>9</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Function Group - Front Actuator Timeout of Lowering Down</Name>
+    <BYTE_OFFSET>9</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Function Group - Front Actuator Position Lost or Unstable</Name>
+    <BYTE_OFFSET>9</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Function Group - Rear Actuator Timeout of Lifting Up</Name>
+    <BYTE_OFFSET>9</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Function Group - Rear Actuator Timeout of Lowering Down</Name>
+    <BYTE_OFFSET>9</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Function Group - Rear Actuator Position Lost or Unstable</Name>
+    <BYTE_OFFSET>9</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Alarm Information - Function Group - Brakes Not Released</Name>
+    <BYTE_OFFSET>9</BYTE_OFFSET>
+    <BIT_OFFSET>6</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[WI] - WARNING INFORMATION</NAME>
+   <OFFSET>58</OFFSET>
+   <SIGNAL>
+    <Name>Warning Information - General Control - Fans Inactive</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Warning Information - Payload Control - Approaching Load Capacity</Name>
+    <BYTE_OFFSET>3</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Warning Information - Safety - Front Scanner Warning Zone Active</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Warning Information - Safety - Front Scanner Glass Contamination Dangerously High</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Warning Information - Safety - Rear Scanner Warning Zone Active</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Warning Information - Safety - Rear Scanner Glass Contamination Dangerously High</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[MI] - MESSAGE INFORMATION</NAME>
+   <OFFSET>62</OFFSET>
+   <SIGNAL>
+    <Name>Message Information - General Control - Manual Mode Active</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message Information - General Control - Automatic Mode Active</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message Information - General Control - Setup Mode Active</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message Information - HMI - LED Disabled</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message Information - HMI - Front Bluespot Excuded</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message Information - HMI - Rear Bluespot Excluded</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message Information - HMI - Audio Excluded</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message Information - Trolley Control - Docking Zones Active</Name>
+    <BYTE_OFFSET>3</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message Information - Trolley Control - Trolley Control Excluded</Name>
+    <BYTE_OFFSET>3</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message Information - Trolley Control - Resoruce Control Excluded</Name>
+    <BYTE_OFFSET>3</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message Information - Payload Control - Weight Control Excluded</Name>
+    <BYTE_OFFSET>3</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message Information - Safety - Scanners Safety Zones Muted</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message Information - Safety - Front 3D Sensor Excluded</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message Information - Safety - Rear 3D Sensor Excluded</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message Information - Safety - Front Ultrasonic Sensors Excluded</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message Information - Safety - Rear Ultrasonic Sensors Excluded</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[ODS] - Odometry Signals</NAME>
+   <OFFSET>66</OFFSET>
+   <SIGNAL>
+    <Name>Momentary frequency of left encoder pulses</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt32</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Momentary frequency of right encoder pulses</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt32</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Cumulative distance left</Name>
+    <BYTE_OFFSET>8</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt32</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Cumulative distance right</Name>
+    <BYTE_OFFSET>12</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt32</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[ENS] - Energy Signals</NAME>
+   <OFFSET>82</OFFSET>
+   <SIGNAL>
+    <Name>Momentary current consuption</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Battery cell voltage</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Momentary power consumption</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Momentary energy consumption</Name>
+    <BYTE_OFFSET>6</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Cumulative energy consumption</Name>
+    <BYTE_OFFSET>8</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>State Of Charge</Name>
+    <BYTE_OFFSET>10</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[IS] - Inclination Signals</NAME>
+   <OFFSET>98</OFFSET>
+   <SIGNAL>
+    <Name>X inclination</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Real</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Y inclination</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Real</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[NNS] - Natural Navigation Signals</NAME>
+   <OFFSET>106</OFFSET>
+   <SIGNAL>
+    <Name>Natural Navigation status</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Position initialize status</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Error status</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>On route status</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Natural Navigation state</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>X-coordinate</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Real</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Y-coordinate</Name>
+    <BYTE_OFFSET>8</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Real</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Heading</Name>
+    <BYTE_OFFSET>12</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Real</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Level</Name>
+    <BYTE_OFFSET>16</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Position confidence</Name>
+    <BYTE_OFFSET>18</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Speed</Name>
+    <BYTE_OFFSET>20</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Real</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Going to ID</Name>
+    <BYTE_OFFSET>26</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Target reached</Name>
+    <BYTE_OFFSET>30</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Current segment</Name>
+    <BYTE_OFFSET>32</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[NNCF] - Natural Navigation Command Feedback</NAME>
+   <OFFSET>132</OFFSET>
+   <SIGNAL>
+    <Name>Protocol Version</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UShort</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message ID</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UShort</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message length</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[CRF] - Collaborative Robot Feedback</NAME>
+   <OFFSET>162</OFFSET>
+   <SIGNAL>
+    <Name>External control over CR active</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR enabled</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR program done trigger</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR running</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR safety circuit closed</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR collision detected</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR error active</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>6</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR warning active</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>7</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR work state ready active</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR work state busy active</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR work state error active</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR Automatic mode active</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR Manual mode active</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR Service mode active</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>6</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR Sleep mode active</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>7</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Current CR program number</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR calibration status done</Name>
+    <BYTE_OFFSET>5</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR calibration status not started</Name>
+    <BYTE_OFFSET>5</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR calibration status in progress</Name>
+    <BYTE_OFFSET>5</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR gripper opened</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR gripper closed</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR warning code</Name>
+    <BYTE_OFFSET>6</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR error code</Name>
+    <BYTE_OFFSET>8</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[CRENS] - Collaborative Robot Energy Signals</NAME>
+   <OFFSET>172</OFFSET>
+   <SIGNAL>
+    <Name>CR Momentary current consuption</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR Battery cell voltage</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR Momentary power consumption</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR Momentary energy consumption</Name>
+    <BYTE_OFFSET>6</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR Cumulative energy consumption</Name>
+    <BYTE_OFFSET>8</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>CR Battery value</Name>
+    <BYTE_OFFSET>10</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt16</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+ </TCP_FRAME>
+
+ <TCP_FRAME>
+  <ID>6100</ID>
+  <Groups>Frames containing general statuses of AGV</Groups>
+  <Groups>Frames transmitted by PLC, with data prepared by PLC</Groups>
+  <Groups>Frames not transponded by PLC</Groups>
+  <NAME>Frame with device groups statuses (from PLC)</NAME>
+  <Comment>Devices' permissions, enables, control statuses</Comment>
+  <AGV_Id>999</AGV_Id>
+  <LENGTH>140</LENGTH>
+  <ver>1</ver>
+  <SIGNAL_GROUP>
+   <NAME>[TS] TIME STAMP</NAME>
+   <OFFSET>0</OFFSET>
+   <SIGNAL>
+    <Name>Time stamp</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Date and Time</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Number</Name>
+    <BYTE_OFFSET>12</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[GSC] GENERAL SIGNALS CONTROL</NAME>
+   <OFFSET>12</OFFSET>
+   <SIGNAL>
+    <Name>Activate manual mode</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Activate automatic mode</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Activate docking mode</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>TMS Fault active</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>TMS Warning active</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>TMS Diagnostic Message active</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Cancel alarms</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[BC] BRAKES CONTROL</NAME>
+   <OFFSET>14</OFFSET>
+   <SIGNAL>
+    <Name>Brakes - release</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Brakes - block</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[PAC] PIN ACTUATOR CONTROL</NAME>
+   <OFFSET>16</OFFSET>
+   <SIGNAL>
+    <Name>Actuator – Move Up</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Actuator – Move Down</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[LPC] LIFTING PLATE CONTROL</NAME>
+   <OFFSET>18</OFFSET>
+   <SIGNAL>
+    <Name>Lifting Plate - Move Up</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Lifting Plate - Move Down</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[LEDC] LED CONTROL</NAME>
+   <OFFSET>20</OFFSET>
+   <SIGNAL>
+    <Name>LED RGB - TMS control</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>LED RGB Strip 1 (left) – RED</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>LED RGB Strip 2 (right) – RED</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>LED RGB Strip 1 (left) – GREEN</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>LED RGB Strip 2 (right) – GREEN</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>LED RGB Strip 1 (left) – BLUE</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>LED RGB Strip 2 (right) – BLUE</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>6</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[SSC] SAFETY SIGNALS CONTROL</NAME>
+   <OFFSET>22</OFFSET>
+   <SIGNAL>
+    <Name>Safety signals control - reserved</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[EC] EXCLUSIONS CONTROL</NAME>
+   <OFFSET>24</OFFSET>
+   <SIGNAL>
+    <Name>Scanners mute</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>LED exclude</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Front bluespot exclude</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Rear bluespot exclude</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Front 3D sensor exclude</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Rear 3D sensor exclude</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Front ultrasonic sensors exclude</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>6</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Rear ultrasonic sensors exclude</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>6</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Trolley control exclude</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Resource control exclude</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Weight control exclude</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Audio exclude</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[SDC] - Single Drive Control</NAME>
+   <OFFSET>66</OFFSET>
+   <SIGNAL>
+    <Name>Single Drive Control - enable</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Single Drive Control - activate left drive</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Single Drive Control - activate right drive</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Single Drive Control - right drive velocity</Name>
+    <BYTE_OFFSET>6</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Real</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[MC] - Manual Control</NAME>
+   <OFFSET>76</OFFSET>
+   <SIGNAL>
+    <Name>Manual Control - enable</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Manual Control - move forward</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Manual Control - move backward</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Manual Control - rotate left</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Manual Control - rotate right</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Manual Control - turn left</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>5</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Manual Control - turn right</Name>
+    <BYTE_OFFSET>1</BYTE_OFFSET>
+    <BIT_OFFSET>6</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Velocity</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Real</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[NNC] - Natural Navigation Command</NAME>
+   <OFFSET>80</OFFSET>
+   <SIGNAL>
+    <Name>Protocol Version</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UShort</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message ID</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UShort</VAR_TYPE>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>Message length</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>[NNC]3005 - Go to destination</NAME>
+   <OFFSET>88</OFFSET>
+   <SIGNAL>
+    <Name>Destination ID</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt</VAR_TYPE>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+ </TCP_FRAME>
+
+ <TCP_FRAME>
+  <ID>10001</ID>
+  <Groups>Frames containing general statuses of AGV</Groups>
+  <Groups>Frames transmitted by PLC, with data prepared by PLC</Groups>
+  <Groups>Frames not transponded by PLC</Groups>
+  <NAME>Frame with device groups statuses (from PLC)</NAME>
+  <Comment>Devices' permissions, enables, control statuses</Comment>
+  <AGV_Id>999</AGV_Id>
+  <LENGTH>250</LENGTH>
+  <ver>1</ver>
+  <SIGNAL_GROUP>
+   <NAME>[TS] TIME STAMP</NAME>
+   <OFFSET>0</OFFSET>
+   <SIGNAL>
+    <Name>S#_Current segment</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Word</VAR_TYPE>
+    <AGGREGATING_Name>Current segment</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>WORK_CYCLE_NB</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_Target reached</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Word</VAR_TYPE>
+    <AGGREGATING_Name>Target reached</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>TG_WORK_CYCLE_NB</AGGREGATING_Type>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>Aggregated values</NAME>
+   <OFFSET>40</OFFSET>
+   <SIGNAL>
+    <Name>S#_Segment_Nb</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Word</VAR_TYPE>
+    <AGGREGATING_Name>Current segment</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>Word_START</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_NSS_X_Start</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>X-coordinate</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_START</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_NSS_Y_Start</Name>
+    <BYTE_OFFSET>6</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Y-coordinate</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_START</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_NSS_X_End</Name>
+    <BYTE_OFFSET>10</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>X-coordinate</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_END</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_NSS_Y_End</Name>
+    <BYTE_OFFSET>14</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Y-coordinate</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_END</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_NSS_Heading_Start</Name>
+    <BYTE_OFFSET>18</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Heading</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_START</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_NSS_Heading_End</Name>
+    <BYTE_OFFSET>22</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Heading</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_END</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_NSS_Battery cell voltage_Start</Name>
+    <BYTE_OFFSET>26</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt</VAR_TYPE>
+    <AGGREGATING_Name>Battery cell voltage</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_START</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_NSS_Battery cell voltage_End</Name>
+    <BYTE_OFFSET>30</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt</VAR_TYPE>
+    <AGGREGATING_Name>Battery cell voltage</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_END</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_NSS_Cumulative energy consumption_Start</Name>
+    <BYTE_OFFSET>34</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Word</VAR_TYPE>
+    <AGGREGATING_Name>Cumulative energy consumption</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>Word_START</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_NSS_Cumulative energy consumption_End</Name>
+    <BYTE_OFFSET>36</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Word</VAR_TYPE>
+    <AGGREGATING_Name>Cumulative energy consumption</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>Word_END</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_NSS_Cumulative energy consumption_DIFF</Name>
+    <BYTE_OFFSET>38</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Word</VAR_TYPE>
+    <AGGREGATING_Name>Cumulative energy consumption</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_DIFF</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_NSS_Heading_AVG</Name>
+    <BYTE_OFFSET>42</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Heading</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AVG_DWord</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_NSS_Speed_AVG</Name>
+    <BYTE_OFFSET>46</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Speed</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AVG_DWord</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_ENS_Momentary current consuption_AVG</Name>
+    <BYTE_OFFSET>50</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Momentary current consuption</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AVG_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_ENS_Momentary current consuption_INTEGRAL</Name>
+    <BYTE_OFFSET>54</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Momentary current consuption</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>INTEGRAL_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_ENS_Momentary energy consumption_AVG</Name>
+    <BYTE_OFFSET>58</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Momentary energy consumption</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AVG_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_ENS_Momentary energy consumption_INTEGRAL</Name>
+    <BYTE_OFFSET>62</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Momentary energy consumption</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>INTEGRAL_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_WS_Weight statuses - front left strain gauge weight_AVG</Name>
+    <BYTE_OFFSET>66</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Weight statuses - front left strain gauge weight</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AVG_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_WS_Weight statuses - front right strain gauge weight</Name>
+    <BYTE_OFFSET>70</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Weight statuses - front right strain gauge weight</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AVG_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_WS_Weight statuses - rear left strain gauge weight_AVG</Name>
+    <BYTE_OFFSET>74</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Weight statuses - rear left strain gauge weight</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AVG_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_WS_Weight statuses - rear right strain gauge weight_AVG</Name>
+    <BYTE_OFFSET>78</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Weight statuses - rear right strain gauge weight</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AVG_Word</AGGREGATING_Type>
+   </SIGNAL>    
+   <SIGNAL>
+    <Name>S#_ODS_Cumulative distance left_DIFF</Name>
+    <BYTE_OFFSET>82</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Cumulative distance left</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>UINT32_DIFF</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_ODS_Cumulative distance right_DIFF</Name>
+    <BYTE_OFFSET>86</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Cumulative distance right</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>UINT32_DIFF</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_G1LDS_ActualSpeed_L_INTEGRAL</Name>
+    <BYTE_OFFSET>90</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>ActualSpeed_L</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>INTEGRAL_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_G2LDS_ActualSpeed_R_INTEGRAL</Name>
+    <BYTE_OFFSET>94</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>ActualSpeed_R</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>INTEGRAL_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_AI_Alarm Information - Function Group - Front Actuator Timeout of Lifting Up_TIME</Name>
+    <BYTE_OFFSET>102</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Alarm Information - Function Group - Front Actuator Timeout of Lifting Up</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_TIME</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_AI_Alarm Information - Function Group - Front Actuator Timeout of Lifting Up_NB</Name>
+    <BYTE_OFFSET>98</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Alarm Information - Function Group - Front Actuator Timeout of Lifting Up</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_Nb</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_AGGREGATION_TIME</Name>
+    <BYTE_OFFSET>102</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AGGREGATION_TIME</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_TIME_START</Name>
+    <BYTE_OFFSET>106</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Date and Time</VAR_TYPE>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>TIME_START</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_TIME_END</Name>
+    <BYTE_OFFSET>118</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Date and Time</VAR_TYPE>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>TIME_END</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_VS_AGV_FORWARD</Name>
+    <BYTE_OFFSET>130</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+    <AGGREGATING_Name>AGV_FORWARD</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>VIRTUAL_SENSOR</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_VS_AGV_BACKWARD</Name>
+    <BYTE_OFFSET>130</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+    <AGGREGATING_Name>AGV_BACKWARD</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>VIRTUAL_SENSOR</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_VS_AGV_TURNLEFT</Name>
+    <BYTE_OFFSET>130</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+    <AGGREGATING_Name>AGV_TURNLEFT</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>VIRTUAL_SENSOR</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_VS_AGV_TURNRIGHT</Name>
+    <BYTE_OFFSET>130</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+    <AGGREGATING_Name>AGV_TURNRIGHT</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>VIRTUAL_SENSOR</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_VS_AGV_STOP</Name>
+    <BYTE_OFFSET>130</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+    <AGGREGATING_Name>AGV_STOP</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>VIRTUAL_SENSOR</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_VS_AGV_FORWARD_TIME</Name>
+    <BYTE_OFFSET>132</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>S#_VS_AGV_FORWARD</AGGREGATING_Name>
+    <AGGREGATING_Frame>10001</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_TIME</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_VS_AGV_BACKWARD_TIME</Name>
+    <BYTE_OFFSET>136</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>S#_VS_AGV_BACKWARD</AGGREGATING_Name>
+    <AGGREGATING_Frame>10001</AGGREGATING_Frame>
+    <AGGREGATING_Type>S#_Bit_TIME</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_VS_AGV_TURNLEFT_TIME</Name>
+    <BYTE_OFFSET>140</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>S#_VS_AGV_TURNLEFT</AGGREGATING_Name>
+    <AGGREGATING_Frame>10001</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_TIME</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_VS_AGV_TURNRIGHT_TIME</Name>
+    <BYTE_OFFSET>144</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>S#_VS_AGV_TURNRIGHT</AGGREGATING_Name>
+    <AGGREGATING_Frame>10001</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_TIME</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_VS_AGV_TURNLEFT_NB</Name>
+    <BYTE_OFFSET>148</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>S#_VS_AGV_TURNLEFT</AGGREGATING_Name>
+    <AGGREGATING_Frame>10001</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_Nb</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_VS_AGV_TURNRIGHT_NB</Name>
+    <BYTE_OFFSET>152</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>S#_VS_AGV_TURNRIGHT</AGGREGATING_Name>
+    <AGGREGATING_Frame>10001</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_Nb</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_VS_AGV_STOP_NB</Name>
+    <BYTE_OFFSET>156</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>S#_VS_AGV_STOP</AGGREGATING_Name>
+    <AGGREGATING_Frame>10001</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_Nb</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_VS_AGV_STOP_TIME</Name>
+    <BYTE_OFFSET>160</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>S#_VS_AGV_STOP</AGGREGATING_Name>
+    <AGGREGATING_Frame>10001</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_TIME</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>S#_Going to ID</Name>
+    <BYTE_OFFSET>164</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Word</VAR_TYPE>
+    <AGGREGATING_Name>Going to ID</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>Word_START</AGGREGATING_Type>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+ </TCP_FRAME>
+
+ <TCP_FRAME>
+  <ID>10002</ID>
+  <Groups>Frames containing general statuses of AGV</Groups>
+  <Groups>Frames transmitted by PLC, with data prepared by PLC</Groups>
+  <Groups>Frames not transponded by PLC</Groups>
+  <NAME>Frame with device groups statuses (from PLC)</NAME>
+  <Comment>Devices' permissions, enables, control statuses</Comment>
+  <AGV_Id>999</AGV_Id>
+  <LENGTH>250</LENGTH>
+  <ver>1</ver>
+  <SIGNAL_GROUP>
+   <NAME>[TS] TIME STAMP</NAME>
+   <OFFSET>0</OFFSET>
+   <SIGNAL>
+    <Name>J#_Current Job</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Word</VAR_TYPE>
+    <AGGREGATING_Name>Going to ID</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>JOB_NB</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_Target reached</Name>
+    <BYTE_OFFSET>4</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Word</VAR_TYPE>
+    <AGGREGATING_Name>Target reached</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>TG_JOB_NB</AGGREGATING_Type>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+  <SIGNAL_GROUP>
+   <NAME>Aggregated values</NAME>
+   <OFFSET>40</OFFSET>
+   <SIGNAL>
+    <Name>J#_Job_Nb</Name>
+    <BYTE_OFFSET>0</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Word</VAR_TYPE>
+    <AGGREGATING_Name>Going to ID</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>Word_START</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_NSS_X_Start</Name>
+    <BYTE_OFFSET>2</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>X-coordinate</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_START</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_NSS_Y_Start</Name>
+    <BYTE_OFFSET>6</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Y-coordinate</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_START</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_NSS_X_End</Name>
+    <BYTE_OFFSET>10</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>X-coordinate</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_END</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_NSS_Y_End</Name>
+    <BYTE_OFFSET>14</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Y-coordinate</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_END</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_NSS_Heading_Start</Name>
+    <BYTE_OFFSET>18</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Heading</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_START</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_NSS_Heading_End</Name>
+    <BYTE_OFFSET>22</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Heading</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_END</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_NSS_Battery cell voltage_Start</Name>
+    <BYTE_OFFSET>26</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt</VAR_TYPE>
+    <AGGREGATING_Name>Battery cell voltage</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_START</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_NSS_Battery cell voltage_End</Name>
+    <BYTE_OFFSET>30</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>UInt</VAR_TYPE>
+    <AGGREGATING_Name>Battery cell voltage</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_END</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_NSS_Cumulative energy consumption_Start</Name>
+    <BYTE_OFFSET>34</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Word</VAR_TYPE>
+    <AGGREGATING_Name>Cumulative energy consumption</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>Word_START</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_NSS_Cumulative energy consumption_End</Name>
+    <BYTE_OFFSET>36</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Word</VAR_TYPE>
+    <AGGREGATING_Name>Cumulative energy consumption</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>Word_END</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_NSS_Cumulative energy consumption_DIFF</Name>
+    <BYTE_OFFSET>38</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Word</VAR_TYPE>
+    <AGGREGATING_Name>Cumulative energy consumption</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>DWord_DIFF</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_NSS_Heading_AVG</Name>
+    <BYTE_OFFSET>42</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Heading</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AVG_DWord</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_NSS_Speed_AVG</Name>
+    <BYTE_OFFSET>46</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Speed</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AVG_DWord</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_ENS_Momentary current consuption_AVG</Name>
+    <BYTE_OFFSET>50</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Momentary current consuption</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AVG_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_ENS_Momentary current consuption_INTEGRAL</Name>
+    <BYTE_OFFSET>54</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Momentary current consuption</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>INTEGRAL_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_ENS_Momentary energy consumption_AVG</Name>
+    <BYTE_OFFSET>58</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Momentary energy consumption</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AVG_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_ENS_Momentary energy consumption_INTEGRAL</Name>
+    <BYTE_OFFSET>62</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Momentary energy consumption</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>INTEGRAL_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_WS_Weight statuses - front left strain gauge weight_AVG</Name>
+    <BYTE_OFFSET>66</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Weight statuses - front left strain gauge weight</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AVG_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_WS_Weight statuses - front right strain gauge weight</Name>
+    <BYTE_OFFSET>70</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Weight statuses - front right strain gauge weight</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AVG_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_WS_Weight statuses - rear left strain gauge weight_AVG</Name>
+    <BYTE_OFFSET>74</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Weight statuses - rear left strain gauge weight</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AVG_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_WS_Weight statuses - rear right strain gauge weight_AVG</Name>
+    <BYTE_OFFSET>78</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Weight statuses - rear right strain gauge weight</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AVG_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_ODS_Cumulative distance left_DIFF</Name>
+    <BYTE_OFFSET>82</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Cumulative distance left</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>UINT32_DIFF</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_ODS_Cumulative distance right_DIFF</Name>
+    <BYTE_OFFSET>86</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Cumulative distance right</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>UINT32_DIFF</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_G1LDS_ActualSpeed_L_INTEGRAL</Name>
+    <BYTE_OFFSET>90</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>ActualSpeed_L</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>INTEGRAL_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_G2LDS_ActualSpeed_R_INTEGRAL</Name>
+    <BYTE_OFFSET>94</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>ActualSpeed_R</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>INTEGRAL_Word</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_AI_Alarm Information - Function Group - Front Actuator Timeout of Lifting Up_TIME</Name>
+    <BYTE_OFFSET>102</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Alarm Information - Function Group - Front Actuator Timeout of Lifting Up</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_TIME</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_AI_Alarm Information - Function Group - Front Actuator Timeout of Lifting Up_NB</Name>
+    <BYTE_OFFSET>98</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>Alarm Information - Function Group - Front Actuator Timeout of Lifting Up</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_Nb</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_AGGREGATION_TIME</Name>
+    <BYTE_OFFSET>102</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>AGGREGATION_TIME</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_TIME_START</Name>
+    <BYTE_OFFSET>106</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Date and Time</VAR_TYPE>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>TIME_START</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_TIME_END</Name>
+    <BYTE_OFFSET>118</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Date and Time</VAR_TYPE>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>TIME_END</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_VS_AGV_FORWARD</Name>
+    <BYTE_OFFSET>130</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+    <AGGREGATING_Name>AGV_FORWARD</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>VIRTUAL_SENSOR</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_VS_AGV_BACKWARD</Name>
+    <BYTE_OFFSET>130</BYTE_OFFSET>
+    <BIT_OFFSET>1</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+    <AGGREGATING_Name>AGV_BACKWARD</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>VIRTUAL_SENSOR</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_VS_AGV_TURNLEFT</Name>
+    <BYTE_OFFSET>130</BYTE_OFFSET>
+    <BIT_OFFSET>2</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+    <AGGREGATING_Name>AGV_TURNLEFT</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>VIRTUAL_SENSOR</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_VS_AGV_TURNRIGHT</Name>
+    <BYTE_OFFSET>130</BYTE_OFFSET>
+    <BIT_OFFSET>3</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+    <AGGREGATING_Name>AGV_TURNRIGHT</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>VIRTUAL_SENSOR</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_VS_AGV_STOP</Name>
+    <BYTE_OFFSET>130</BYTE_OFFSET>
+    <BIT_OFFSET>4</BIT_OFFSET>
+    <VAR_TYPE>Bit</VAR_TYPE>
+    <AGGREGATING_Name>AGV_STOP</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>VIRTUAL_SENSOR</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_VS_AGV_FORWARD_TIME</Name>
+    <BYTE_OFFSET>132</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>J#_VS_AGV_FORWARD</AGGREGATING_Name>
+    <AGGREGATING_Frame>10002</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_TIME</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_VS_AGV_BACKWARD_TIME</Name>
+    <BYTE_OFFSET>136</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>J#_VS_AGV_BACKWARD</AGGREGATING_Name>
+    <AGGREGATING_Frame>10002</AGGREGATING_Frame>
+    <AGGREGATING_Type>S#_Bit_TIME</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_VS_AGV_TURNLEFT_TIME</Name>
+    <BYTE_OFFSET>140</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>J#_VS_AGV_TURNLEFT</AGGREGATING_Name>
+    <AGGREGATING_Frame>10002</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_TIME</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_VS_AGV_TURNRIGHT_TIME</Name>
+    <BYTE_OFFSET>144</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>J#_VS_AGV_TURNRIGHT</AGGREGATING_Name>
+    <AGGREGATING_Frame>10002</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_TIME</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_VS_AGV_TURNLEFT_NB</Name>
+    <BYTE_OFFSET>148</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>J#_VS_AGV_TURNLEFT</AGGREGATING_Name>
+    <AGGREGATING_Frame>10002</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_Nb</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_VS_AGV_TURNRIGHT_NB</Name>
+    <BYTE_OFFSET>152</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>J#_VS_AGV_TURNRIGHT</AGGREGATING_Name>
+    <AGGREGATING_Frame>10002</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_Nb</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_VS_AGV_STOP_NB</Name>
+    <BYTE_OFFSET>156</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>J#_VS_AGV_STOP</AGGREGATING_Name>
+    <AGGREGATING_Frame>10002</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_Nb</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_VS_AGV_STOP_TIME</Name>
+    <BYTE_OFFSET>160</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>DWord</VAR_TYPE>
+    <AGGREGATING_Name>J#_VS_AGV_STOP</AGGREGATING_Name>
+    <AGGREGATING_Frame>10002</AGGREGATING_Frame>
+    <AGGREGATING_Type>Bit_TIME</AGGREGATING_Type>
+   </SIGNAL>
+   <SIGNAL>
+    <Name>J#_Going to ID</Name>
+    <BYTE_OFFSET>164</BYTE_OFFSET>
+    <BIT_OFFSET>0</BIT_OFFSET>
+    <VAR_TYPE>Word</VAR_TYPE>
+    <AGGREGATING_Name>Going to ID</AGGREGATING_Name>
+    <AGGREGATING_Frame>6000</AGGREGATING_Frame>
+    <AGGREGATING_Type>Word_START</AGGREGATING_Type>
+   </SIGNAL>
+  </SIGNAL_GROUP>
+ </TCP_FRAME>
+
+</AGV_COMM>
