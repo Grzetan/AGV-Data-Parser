@@ -7,6 +7,8 @@ set(PATH "./src")
 set(SOURCE_FILES
     ${PATH}/pugixml.hpp
     ${PATH}/pugixml.cpp
+    ${PATH}/converters/converter.h
+    ${PATH}/converters/converter.cpp
 )
 
 add_executable( ${EXE_NAME} ${PATH}/parseBinary.cpp ${SOURCE_FILES} )

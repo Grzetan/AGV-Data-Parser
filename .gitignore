@@ -15,6 +15,7 @@ CMakeFiles/*
 # Precompiled Headers
 *.gch
 *.pch
+main
 
 # Compiled Dynamic libraries
 *.so
