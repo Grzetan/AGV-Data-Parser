@@ -6,9 +6,7 @@
 
 // Bit, Word, DWord, Uint,
 int main(int argc, char **argv) {
-  std::vector<std::string> requiredFields = {"Manual Mode active",
-                                             "CR Battery cell voltage",
-                                             "Rear ultrasonic sensor excluded"};
+  std::vector<std::string> requiredFields = {"SOC - State Of Charge"};
 
   return 0;
 }

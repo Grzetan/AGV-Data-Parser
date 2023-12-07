@@ -16,6 +16,7 @@ CMakeFiles/*
 *.gch
 *.pch
 main
+.vscode/*
 
 # Compiled Dynamic libraries
 *.so

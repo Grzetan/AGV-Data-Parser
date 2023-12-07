@@ -9,6 +9,8 @@ set(SOURCE_FILES
     ${PATH}/pugixml.cpp
     ${PATH}/converters/converter.h
     ${PATH}/converters/converter.cpp
+    ${PATH}/converters/uint_converter.h
+    ${PATH}/converters/uint_converter.cpp
 )
 
 add_executable( ${EXE_NAME} ${PATH}/parseBinary.cpp ${SOURCE_FILES} )
