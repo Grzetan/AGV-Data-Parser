@@ -7,6 +7,6 @@ std::string UIntConverter::getValue(std::ifstream& file) {
   const auto& bytes = getBytes(file);
   uint32_t value;
   std::memcpy(&value, bytes.data(), getLength());
-
+  std::cout << value << std::endl;
   return std::to_string(value);
 }

@@ -49,16 +49,39 @@ std::vector<ParamData> getRequiredParamData(
   return output;
 }
 
+std::vector<std::string> parseBinary(const std::string& path,
+                                     const std::vector<ParamData>& signals) {
+  std::ifstream binary(path, std::ios::binary);
+  std::vector<std::string> output;
+
+  for (const auto& signal : signals) {
+    if (converters.find(signal.type) == converters.end()) {
+      std::cout << "There is no converter for type " << signal.type
+                << std::endl;
+      continue;
+    }
+
+    converters[signal.type]->setOffsets(signal.byte_offset, signal.bit_offset);
+    output.push_back(converters[signal.type]->getValue(binary));
+  }
+
+  return output;
+}
+
 int main(int argc, char** argv) {
-  std::vector<std::string> requiredFields = {
-      "SOC - State Of Charge", "Left drive activate - manual permission"};
+  std::vector<std::string> requiredFields = {"Current segment"};
 
   const auto& param_data =
-      getRequiredParamData("./data/Forbot_v1.xml", requiredFields);
+      getRequiredParamData("./data/CoBotAGV_v2.xml", requiredFields);
 
-  for (const auto& data : param_data) {
-    std::cout << data.type << ", " << data.byte_offset << ", "
-              << data.bit_offset << std::endl;
+  // for (const auto& data : param_data) {
+  //   std::cout << data.type << ", " << data.byte_offset << ", "
+  //             << data.bit_offset << std::endl;
+  // }
+
+  const auto& signals = parseBinary("./data/content0", param_data);
+  for (const auto& d : signals) {
+    std::cout << d << std::endl;
   }
 
   return 0;
