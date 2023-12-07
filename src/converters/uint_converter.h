@@ -1,3 +1,5 @@
+#pragma once
+
 #include "converter.h"
 
 class UIntConverter : public Converter {

@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 
+#include "config.h"
 #include "pugixml.hpp"
 
 struct ParamData {
@@ -18,7 +19,8 @@ std::vector<ParamData> getRequiredParamData(
     throw std::runtime_error("Cannot open camera XML file");
   }
 
-  std::string query = "/AGV_COMM/TCP_FRAME[ID='6000']/SIGNAL_GROUP/SIGNAL[";
+  std::string query = "/AGV_COMM/TCP_FRAME[ID='" +
+                      std::to_string(tcp_frame_id) + "']/SIGNAL_GROUP/SIGNAL[";
   for (int i = 0; i < requiredFields.size(); i++) {
     query += "Name='" + requiredFields[i] + "'";
     if (i != requiredFields.size() - 1) {
