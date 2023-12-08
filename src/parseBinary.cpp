@@ -1,7 +1,6 @@
 #include <algorithm>
 #include <iomanip>
 #include <iostream>
-#include <sstream>
 #include <string>
 #include <vector>
 
@@ -80,35 +79,22 @@ void writeCSVHeader(std::ofstream& output,
 }
 
 std::vector<u_char> string2bytes(std::string& line) {
-  line.erase(std::remove(line.begin(), line.end(), '"'));
-
-  std::stringstream ss(line.substr(1));
+  line.erase(std::remove_if(line.begin(), line.end(),
+                            [](unsigned char c) {
+                              return !std::isprint(c) || c == '"' ||
+                                     c == '\\' || c == 'x';
+                            }),
+             line.end());
 
   // Create a vector to store the resulting bytes
-  std::vector<u_char> byteVector = {0xA1};
+  std::vector<u_char> byteVector;
 
   // Iterate through pairs of characters and convert them to bytes
-  while (ss.good()) {
-    u_char byteValue;
-    ss >> std::hex >> byteValue;
-
-    // Check if the conversion was successful
-    if (ss.fail()) {
-      break;
-    }
-
-    // Add the byte to the vector
-    byteVector.push_back(static_cast<u_char>(byteValue));
+  for(int i=0; i<line.size(); i+=2){
+    byteVector.push_back(std::stoi(line.substr(i, 2), nullptr, 16));
   }
 
-  // Print the resulting vector
-  for (const auto& byte : byteVector) {
-    std::cout << std::hex << std::setw(2) << std::setfill('0')
-              << static_cast<int>(byte);
-  }
-  std::cout << std::endl;
-
-  return {};
+  return byteVector;
 }
 
 void binary2CSV(const std::string& binary_path, const std::string& output_path,
@@ -118,10 +104,17 @@ void binary2CSV(const std::string& binary_path, const std::string& output_path,
 
   writeCSVHeader(output, required_signals);
 
-  std::string line;
+  std::string line = "";
 
   while (std::getline(data, line)) {
     std::vector<u_char> bytes = string2bytes(line);
+
+    //Print the resulting vector
+    for (const auto& byte : bytes) {
+      std::cout << std::hex << std::setw(2) << std::setfill('0')
+                << static_cast<int>(byte);
+    }
+    std::cout << std::endl;
   }
 }
 
