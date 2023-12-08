@@ -4,11 +4,15 @@
 
 Converter::Converter(const uint64_t &length) : length_(std::move(length)) {}
 
-std::vector<u_char> Converter::getBytes(std::ifstream &file) {
+std::vector<u_char> Converter::getBytes(const std::vector<u_char> &bytes) {
+  if (bytes.size() < byte_offset_ + length_) {
+    return {};
+  }
+
   std::vector<u_char> data(length_);
-  file.seekg(byte_offset_);
-  file.read(reinterpret_cast<char *>(data.data()), length_);
-  data.resize(file.gcount());
+
+  std::copy(bytes.begin() + byte_offset_, bytes.end() + byte_offset_ + length_,
+            data.begin());
 
   for (const auto &byte : data) {
     std::cout << "0x" << std::setw(2) << std::setfill('0') << std::hex

@@ -3,8 +3,8 @@
 UIntConverter::UIntConverter(const uint64_t& length)
     : Converter(std::move(length)){};
 
-std::string UIntConverter::getValue(std::ifstream& file) {
-  const auto& bytes = getBytes(file);
+std::string UIntConverter::getValue(const std::vector<u_char>& data) {
+  const auto& bytes = getBytes(data);
   uint32_t value;
   std::memcpy(&value, bytes.data(), getLength());
   std::cout << value << std::endl;

@@ -12,7 +12,7 @@ struct ParamData {
 };
 
 std::vector<ParamData> getRequiredParamData(
-    const std::string& path, const std::vector<std::string>& requiredFields) {
+    const std::string& path, const std::vector<std::string>& required_fields) {
   pugi::xml_document doc;
   pugi::xml_parse_result result = doc.load_file(path.c_str());
   if (!result) {
@@ -21,9 +21,9 @@ std::vector<ParamData> getRequiredParamData(
 
   std::string query = "/AGV_COMM/TCP_FRAME[ID='" +
                       std::to_string(tcp_frame_id) + "']/SIGNAL_GROUP/SIGNAL[";
-  for (int i = 0; i < requiredFields.size(); i++) {
-    query += "Name='" + requiredFields[i] + "'";
-    if (i != requiredFields.size() - 1) {
+  for (int i = 0; i < required_fields.size(); i++) {
+    query += "Name='" + required_fields[i] + "'";
+    if (i != required_fields.size() - 1) {
       query += " or ";
     }
   }
@@ -49,9 +49,8 @@ std::vector<ParamData> getRequiredParamData(
   return output;
 }
 
-std::vector<std::string> parseBinary(const std::string& path,
-                                     const std::vector<ParamData>& signals) {
-  std::ifstream binary(path, std::ios::binary);
+std::vector<std::string> parseBytes(const std::vector<u_char>& bytes,
+                                    const std::vector<ParamData>& signals) {
   std::vector<std::string> output;
 
   for (const auto& signal : signals) {
@@ -62,27 +61,27 @@ std::vector<std::string> parseBinary(const std::string& path,
     }
 
     converters[signal.type]->setOffsets(signal.byte_offset, signal.bit_offset);
-    output.push_back(converters[signal.type]->getValue(binary));
+    output.push_back(converters[signal.type]->getValue(bytes));
   }
 
   return output;
 }
 
-int main(int argc, char** argv) {
-  std::vector<std::string> requiredFields = {"Current segment"};
+void binary2CSV(const std::string& binary_path, const std::string& output_path,
+                const std::vector<ParamData>& required_signals) {}
 
-  const auto& param_data =
-      getRequiredParamData("./data/CoBotAGV_v2.xml", requiredFields);
+int main(int argc, char** argv) {
+  std::vector<std::string> required_fields = {"Current segment"};
+
+  const auto& required_signals =
+      getRequiredParamData("./data/CoBotAGV_v2.xml", required_fields);
 
   // for (const auto& data : param_data) {
   //   std::cout << data.type << ", " << data.byte_offset << ", "
   //             << data.bit_offset << std::endl;
   // }
 
-  const auto& signals = parseBinary("./data/content0", param_data);
-  for (const auto& d : signals) {
-    std::cout << d << std::endl;
-  }
+  binary2CSV("./data/data.csv", "output.csv", required_signals);
 
   return 0;
 }
