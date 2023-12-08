@@ -11,6 +11,8 @@ set(SOURCE_FILES
     ${PATH}/converters/converter.cpp
     ${PATH}/converters/uint_converter.h
     ${PATH}/converters/uint_converter.cpp
+    ${PATH}/utils.h
+    ${PATH}/utils.cpp
 )
 
 add_executable( ${EXE_NAME} ${PATH}/parseBinary.cpp ${SOURCE_FILES} )
