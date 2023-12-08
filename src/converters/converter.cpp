@@ -11,14 +11,8 @@ std::vector<u_char> Converter::getBytes(const std::vector<u_char> &bytes) {
 
   std::vector<u_char> data(length_);
 
-  std::copy(bytes.begin() + byte_offset_, bytes.end() + byte_offset_ + length_,
-            data.begin());
-
-  for (const auto &byte : data) {
-    std::cout << "0x" << std::setw(2) << std::setfill('0') << std::hex
-              << static_cast<int>(byte) << " ";
-  }
-  std::cout << std::endl;
+  std::copy(bytes.begin() + byte_offset_,
+            bytes.begin() + byte_offset_ + length_, data.begin());
 
   return data;
 }

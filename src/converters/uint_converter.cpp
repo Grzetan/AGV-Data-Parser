@@ -7,6 +7,5 @@ std::string UIntConverter::getValue(const std::vector<u_char>& data) {
   const auto& bytes = getBytes(data);
   uint32_t value;
   std::memcpy(&value, bytes.data(), getLength());
-  std::cout << value << std::endl;
   return std::to_string(value);
 }

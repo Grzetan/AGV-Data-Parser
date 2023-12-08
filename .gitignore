@@ -17,6 +17,7 @@ CMakeFiles/*
 *.pch
 main
 .vscode/*
+output.csv
 
 # Compiled Dynamic libraries
 *.so

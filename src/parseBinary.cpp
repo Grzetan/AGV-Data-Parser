@@ -58,9 +58,7 @@ std::vector<std::string> parseBytes(const std::vector<u_char>& bytes,
 
   for (const auto& signal : signals) {
     if (converters.find(signal.type) == converters.end()) {
-      std::cout << "There is no converter for type " << signal.type
-                << std::endl;
-      continue;
+      throw std::runtime_error("There is a missing converter");
     }
 
     converters[signal.type]->setOffsets(signal.byte_offset, signal.bit_offset);
@@ -76,6 +74,7 @@ void writeCSVHeader(std::ofstream& output,
   for (const auto& sig : required_signals) {
     output << sig.name << ";";
   }
+  output << std::endl;
 }
 
 std::vector<u_char> string2bytes(std::string& line) {
@@ -90,7 +89,7 @@ std::vector<u_char> string2bytes(std::string& line) {
   std::vector<u_char> byteVector;
 
   // Iterate through pairs of characters and convert them to bytes
-  for(int i=0; i<line.size(); i+=2){
+  for (int i = 0; i < line.size(); i += 2) {
     byteVector.push_back(std::stoi(line.substr(i, 2), nullptr, 16));
   }
 
@@ -104,30 +103,30 @@ void binary2CSV(const std::string& binary_path, const std::string& output_path,
 
   writeCSVHeader(output, required_signals);
 
-  std::string line = "";
+  std::string line;
+  uint64_t id = 0;
 
   while (std::getline(data, line)) {
+    output << id++ << ";";
     std::vector<u_char> bytes = string2bytes(line);
-
-    //Print the resulting vector
-    for (const auto& byte : bytes) {
-      std::cout << std::hex << std::setw(2) << std::setfill('0')
-                << static_cast<int>(byte);
+    for (const auto& val : parseBytes(bytes, required_signals)) {
+      output << val << ";";
     }
-    std::cout << std::endl;
+    output << std::endl;
   }
 }
 
 int main(int argc, char** argv) {
-  std::vector<std::string> required_fields = {"Current segment"};
+  std::vector<std::string> required_fields = {"Current segment",
+                                              "ActualSpeed_R"};
 
   const auto& required_signals =
       getRequiredParamData("./data/CoBotAGV_v2.xml", required_fields);
 
-  // for (const auto& data : param_data) {
-  //   std::cout << data.type << ", " << data.byte_offset << ", "
-  //             << data.bit_offset << std::endl;
-  // }
+  for (const auto& data : required_signals) {
+    std::cout << data.type << ", " << data.byte_offset << ", "
+              << data.bit_offset << std::endl;
+  }
 
   binary2CSV("./data/data.csv", "output.csv", required_signals);
 
