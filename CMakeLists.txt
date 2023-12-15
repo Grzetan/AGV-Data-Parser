@@ -11,6 +11,8 @@ set(SOURCE_FILES
     ${PATH}/converters/converter.cpp
     ${PATH}/converters/uint_converter.h
     ${PATH}/converters/uint_converter.cpp
+    ${PATH}/converters/timestamp_converter.h
+    ${PATH}/converters/timestamp_converter.cpp
     ${PATH}/utils.h
     ${PATH}/utils.cpp
 )
