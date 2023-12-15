@@ -14,6 +14,9 @@ std::vector<u_char> Converter::getBytes(const std::vector<u_char> &bytes) {
   std::copy(bytes.begin() + byte_offset_,
             bytes.begin() + byte_offset_ + length_, data.begin());
 
+  // Fix endianess
+  std::reverse(data.begin(), data.end());
+
   return data;
 }
 
